@@ -1,12 +1,12 @@
 {
-  "name": "ab-start-project",
+  "name": "days",
   "version": "1.0.0",
   "description": "Установка: выполнить в папке проекта: `npm i`.",
   "main": "gulpfile.js",
   "author": "Aleksey Korshakov",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alekseyburn/ab-start-project.git"
+    "url": "https://github.com/alekseyburn/days.git"
   },
   "scripts": {
     "start": "gulp",
@@ -40,7 +40,7 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@htmlacademy/editorconfig-cli": "^1.0.0",
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^9.8.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
@@ -73,7 +73,7 @@
     "gulp.spritesmith": "^6.11.0",
     "husky": "^4.2.5",
     "imagemin-pngquant": "^8.0.0",
-    "lint-staged": "^10.2.2",
+    "lint-staged": "^10.2.4",
     "merge-stream": "^2.0.0",
     "mkdirp": "^1.0.4",
     "path": "^0.12.7",
@@ -81,9 +81,9 @@
     "postcss-inline-svg": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
     "pug-lint": "^2.6.0",
-    "stylelint": "^13.3.3",
+    "stylelint": "^13.4.1",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.17.1",
+    "stylelint-scss": "^3.17.2",
     "through2": "^3.0.1",
     "vinyl-buffer": "^1.0.1",
     "webpack": "^4.43.0",
