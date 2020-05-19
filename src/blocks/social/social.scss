@@ -1,0 +1,16 @@
+.social {
+  @include reset-list();
+  font-size: 3rem;
+}
+
+.social__item {
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.social__link {
+  color: $invert-text-color;
+}
