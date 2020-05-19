@@ -3,4 +3,88 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .slide {
+  &--mountain {
+    .slide__span {
+      color: $slide-mountain-color;
+    }
+  }
+
+  &--hike {
+    .slide__span {
+      color: $slide-hike-color;
+    }
+  }
+
+  &--fashion {
+    .slide__span {
+      color: $slide-fashion-color;
+    }
+  }
+}
+
+.slide__picture {
+  position: relative;
+
+  flex: 1 1 25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $main-bg-color;
+  }
+}
+
+.slide__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.slide__wrapper {
+  position: relative;
+
+  display: flex;
+  flex: 1 1 25rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $main-bg-color;
+  }
+}
+
+.slide__title {
+  margin-bottom: 3rem;
+
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.slide__text {
+  margin-bottom: 3rem;
+
+  font-size: 1.5rem;
+  color: $alter-text-color;
+}
+
+.slide__link {
+  align-self: flex-start;
 }

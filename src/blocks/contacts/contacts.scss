@@ -3,4 +3,24 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .contacts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: $neutral-bg-color;
+  opacity: 1;
+}
+
+.contacts__info {
+  flex-basis: 30rem;
+  color: $invert-text-color;
+}
+
+.contacts__title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.contacts__text {
+  font-size: 1.5rem;
 }
