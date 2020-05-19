@@ -15,6 +15,7 @@ block header
   button.page-header__btn
     span.visually-hidden toggle menu
 
+
 block content
   +slide()(class='slide--mountain')
     picture
@@ -43,9 +44,19 @@ block content
         span.slide__span fingertips.
       p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
       +btn('Explore', 'slide__link')(href='/')
-block footer
-  p «Подвал»
-  p Контактный телефон: #[a(href='tel:+70000000000') +7 000 000 00 00]
+  +contacts()
+    +social('contacts__list')
+      +social-link('twitter', '/', text='Twitter')
+      +social-link('youtube', '/', text='Youtube')
+      +social-link('instagram', '/', text='Instagram')
+    .contacts__info
+      h2.contacts__title Stay in touch.
+      p.contacts__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem praesentium ea amet error quidem natus. Magnam explicabo sed tenetur?
+  .cursor
+    span.cursor__text
+  .swipe.swipe--1
+  .swipe.swipe--2
+  .swipe.swipe--3
 
 //- block append page-bottom
 //-   script(src='js/some.js')
