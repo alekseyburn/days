@@ -1,24 +1,62 @@
 extends ../pug/layout.pug
 
 block meta
-  title Главная
-  meta(name='description', content='')
+  title Travel Days
+  meta(name='description', content='lorem ipsum')
 
-//- block append head
-//-   link(rel='stylesheet', href='css/some.css')
-  link(rel='preload', href='fonts/Poppins-Medium.woff2', as='font', crossorigin='anonymous')
-    link(rel='preload', href='fonts/Poppins-Regular.woff2', as='font', crossorigin='anonymous')
+  block append head
+    link(rel='preload', href='fonts/montserrat.woff2', as='font', crossorigin='anonymous')
 
 block header
-  p.nothing test
+  +logo('/', 'page-header__logo')
+    picture
+      source(type='image/webp', srcset='img/logo-days.webp')
+      img.logo__img(src='img/logo-days.png', width='130', height='55', alt='Days logo', loading='lazy')
+  button.page-header__btn
+    span.visually-hidden toggle menu
+
 
 block content
-  h1 Заголовок с каким-то эффектом
-  p Содержимое. #[a(href='blocks-demo.html') Библиотека блоков].
-
-block footer
-  p «Подвал»
-  p Контактный телефон: #[a(href='tel:+70000000000') +7 000 000 00 00]
+  +slide()(class='slide--mountain')
+    picture
+      source(type='image/webp', srcset='img/mountain.webp')
+      img.slide__img(width='/', height='/', src='img/mountain.jpg', alt='Mountain image', loading='lazy')
+    .slide__wrapper
+      h2.slide__title.slide Freedom at your
+        span.slide__span fingertips.
+      p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
+      +btn('Explore', 'slide__link')(href='/')
+  +slide()(class='slide--hike')
+    picture
+      source(type='image/webp', srcset='img/hike.webp')
+      img.slide__img(width='/', height='/', src='img/hike.jpg', alt='Hike image', loading='lazy')
+    .slide__wrapper
+      h2.slide__title Freedom at your
+        span.slide__span fingertips.
+      p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
+      +btn('Explore', 'slide__link')(href='/')
+  +slide()(class='slide--fashion')
+    picture
+      source(type='image/webp', srcset='img/fashion.webp')
+      img.slide__img(width='/', height='/', src='img/fashion.jpg', alt='Fashion image', loading='lazy')
+    .slide__wrapper
+      h2.slide__title Freedom at your
+        span.slide__span fingertips.
+      p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
+      +btn('Explore', 'slide__link')(href='/')
+  +contacts()
+    +social('contacts__list')
+      +social-link('twitter', '/', text='Twitter')
+      +social-link('youtube', '/', text='Youtube')
+      +social-link('instagram', '/', text='Instagram')
+    .contacts__info
+      h2.contacts__title Stay in touch.
+      p.contacts__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem praesentium ea amet error quidem natus. Magnam explicabo sed tenetur?
+  .cursor
+    span.cursor__text
+  .swipe.swipe--1
+  .swipe.swipe--2
+  .swipe.swipe--3
 
 //- block append page-bottom
 //-   script(src='js/some.js')
