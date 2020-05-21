@@ -4,6 +4,7 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  cursor: none;
 }
 
 html {
@@ -43,14 +44,6 @@ p {
   hyphenate-limit-last: always;
   hyphenate-limit-lines: 2;
   hyphenate-limit-zone: 8%;
-}
-
-.cursor {
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid $alter-bg-color;
-  border-radius: 50%;
-  position: absolute;
 }
 
 .scrollmagic-pin-spacer {
