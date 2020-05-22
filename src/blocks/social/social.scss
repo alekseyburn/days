@@ -13,4 +13,8 @@
 
 .social__link {
   color: $invert-text-color;
+
+  &:hover {
+    color: $slide-mountain-color;
+  }
 }

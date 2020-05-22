@@ -1,6 +1,6 @@
 /* eslint-disable */
-let mouse = document.querySelector('.cursor');
-let mouseText = mouse.querySelector('.cursor__text');
+const mouse = document.querySelector('.cursor');
+const mouseText = mouse.querySelector('.cursor__text');
 
 function cursor(e) {
   mouse.style.top = `${e.pageY}px`;
@@ -9,7 +9,7 @@ function cursor(e) {
 
 function activeCursor(e) {
   const item = e.target;
-  if(item.tagName === 'IMG' && item.parentElement.parentElement.tagName === 'A' || item.tagName === 'BUTTON' || item.tagName === 'A') {
+  if(item.tagName === 'IMG' && item.parentElement.parentElement.tagName === 'A' || item.tagName === 'BUTTON' || item.tagName === 'A' && !item.classList.contains('social__link')) {
     mouse.classList.add('cursor--active');
   } else {
     mouse.classList.remove('cursor--active');
