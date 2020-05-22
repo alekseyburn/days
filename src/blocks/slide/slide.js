@@ -54,4 +54,5 @@ function animateSlides() {
     }).addTo(controller);
   });
 }
+
 animateSlides();
