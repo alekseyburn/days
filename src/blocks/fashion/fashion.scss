@@ -1,0 +1,84 @@
+// В этом файле должны быть стили для БЭМ-блока fashion, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.fashion__wrapper {
+  flex: 1 1 25rem;
+  position: relative;
+  margin-right: 2rem;
+}
+
+.fashion__title {
+  font-size: 6rem;
+  margin-bottom: 5rem;
+}
+
+.fashion__text {
+  font-size: 2rem;
+}
+
+.fashion picture {
+  height: 75vh;
+  flex-basis: 30rem;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    font-size: 12rem;
+    opacity: 0.2;
+    left: -15rem;
+    bottom: 0;
+  }
+}
+
+.fashion__img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.fashion {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: relative;
+
+  &--luiza {
+    .fashion__title {
+      color: $slide-mountain-color;
+    }
+
+    picture {
+      &::before {
+        content: '01';
+      }
+    }
+  }
+
+  &--silicia {
+    .fashion__title {
+      color: $slide-hike-color;
+    }
+
+    picture {
+      &::before {
+        content: '02';
+      }
+    }
+  }
+
+  &--claire {
+    .fashion__title {
+      color: $slide-fashion-color;
+    }
+
+    picture {
+      &::before {
+        content: '03';
+      }
+    }
+  }
+}
