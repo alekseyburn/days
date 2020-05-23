@@ -55,4 +55,4 @@ function animateSlides() {
   });
 }
 
-animateSlides();
+module.exports = animateSlides;

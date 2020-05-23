@@ -22,10 +22,10 @@ html(class='no-js', lang='en')
       link(rel='stylesheet', href='css/style.css')
       script(src='js/bundle.js', defer)
 
-  body.webp
+  body.webp(data-barba='wrapper')
     +page-header()
       block header
-    main.page-main
-      block content
+
+    block main
 
     block page-bottom

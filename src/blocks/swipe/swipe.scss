@@ -1,0 +1,27 @@
+// В этом файле должны быть стили для БЭМ-блока swipe, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.swipe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+
+  &--1 {
+    background: $slide-mountain-color;
+    z-index: 5;
+  }
+
+  &--2 {
+    background: $slide-hike-color;
+    z-index: 4;
+  }
+
+  &--3 {
+    background: $slide-fashion-color;
+    z-index: 3;
+  }
+}
