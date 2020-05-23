@@ -1,4 +1,5 @@
 const animateSlides = require('../blocks/slide/slide.js');
+const detailAnimation = require('../blocks/fashion/fashion.js');
 
 document.querySelector('html').classList.remove('no-js');
 if (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor)) {
@@ -29,7 +30,12 @@ barba.init({
       namespace: 'fashion',
       beforeEnter() {
         logo.href = './index.html';
+        detailAnimation();
         gsap.fromTo('.page-header', 1, {y: '100%'}, {y: '0%', ease: 'power2.inOut'});
+      },
+      beforeLeave() {
+        controller.destroy();
+        detailScene.destroy();
       }
     }
   ],
