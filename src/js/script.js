@@ -31,7 +31,6 @@ barba.init({
       beforeEnter() {
         logo.href = './index.html';
         detailAnimation();
-        gsap.fromTo('.page-header', 1, {y: '100%'}, {y: '0%', ease: 'power2.inOut'});
       },
       beforeLeave() {
         controller.destroy();
@@ -56,6 +55,7 @@ barba.init({
         const tl = gsap.timeline({defaults: {ease: 'power2.inOut'}});
         tl.fromTo('.swipe', 0.5, {x: '0%'}, {x: '100%', stagger: 0.25, onComplete: done});
         tl.fromTo(next.container, 1, {opacity: 0}, {opacity: 1});
+        tl.fromTo('.page-header', 1, {y: '-100%'}, {y: '0%', ease: 'power2.inOut'}, '-=1.5');
       }
     }
   ]

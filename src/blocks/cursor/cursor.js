@@ -20,7 +20,9 @@ function activeCursor(e) {
     mouseText.innerText = 'Tap';
   } else {
     mouse.classList.remove('cursor--active-link');
-    gsap.to('.slide__title', {className: '+=slide__title'});
+    if (document.querySelector('.page-main').attributes[2].nodeValue === 'home') {
+      gsap.to('.slide__title', {className: '+=slide__title'});
+    }
     mouseText.innerText = '';
   }
 }

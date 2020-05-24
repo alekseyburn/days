@@ -8,31 +8,25 @@ function animateSlides() {
   controller = new ScrollMagic.Controller();
   //Выбор слайдов
   const sliders = document.querySelectorAll('.slide');
-  const head = document.querySelector('.page-header');
   //Перебор слайдов
   sliders.forEach((slide, index, slides) => {
     const img = slide.querySelector('.slide__img');
-    const revealImg = slide.querySelector('.slide__picture');
-    const revealText = slide.querySelector('.slide__wrapper');
+    const revealImg = slide.querySelector('.slide__wrapper--img');
+    const revealText = slide.querySelector('.slide__wrapper--text');
     //GSAP
     const slideTl = gsap.timeline({
       defaults: {duration: 1, ease: 'power2.inOut'}
     });
-    slideTl.to(revealImg, {className: '+=slide__picture slide__picture--show'});
+    slideTl.to(revealImg, {className: '+=slide__wrapper slide__wrapper--img slide__wrapper--show'});
     slideTl.fromTo(img, {scale: 2}, {scale: 1}, '-=1');
-    slideTl.to(revealText, {className: '+=slide__wrapper slide__wrapper--show'}, '-=0.75');
-    slideTl.fromTo(head, {y: '-100%'}, {y: '0%'}, '-=0.75');
+    slideTl.to(revealText, {className: '+=slide__wrapper slide__wrapper--text slide__wrapper--show'}, '-=0.75');
     //Создаём сцену
     slideScene = new ScrollMagic.Scene({
       triggerElement: slide,
       triggerHook: 0.25,
       reverse: false
     }).setTween(slideTl)
-      .addIndicators({
-      colorStart: 'white',
-      colorTrigger: 'white',
-      name: 'slide'
-    }).addTo(controller);
+      .addTo(controller);
     //Новая анимация
     const pageTl = gsap.timeline();
     let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1];
@@ -46,12 +40,7 @@ function animateSlides() {
       triggerHook: 0,
     }).setTween(pageTl)
       .setPin(slide, {pushFollowers: false})
-      .addIndicators({
-      colorStart: 'white',
-      colorTrigger: 'white',
-      name: 'page',
-      indent: 200,
-    }).addTo(controller);
+      .addTo(controller);
   });
 }
 

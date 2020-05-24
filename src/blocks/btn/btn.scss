@@ -1,10 +1,12 @@
 .btn {
   padding: 1rem 2rem;
-  background: none;
-  color: $main-text-color;
-  border: 1px solid $main-text-color;
+
   font-size: 1rem;
+  color: $main-text-color;
   text-decoration: none;
+
+  background: none;
+  border: 1px solid $main-text-color;
   cursor: none;
 
   &:hover {

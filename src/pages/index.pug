@@ -22,28 +22,31 @@ block main
   main.page-main(data-barba='container', data-barba-namespace='home')
     h1.visually-hidden Travel site
     +slide('page-main__slide')(class='slide--mountain')
-      picture.slide__picture
-        source(type='image/webp', srcset='img/forest.webp')
-        img.slide__img(width='647', height='514', src='img/forest.jpg', alt='Mountain image', loading='lazy')
-      .slide__wrapper
+      .slide__wrapper.slide__wrapper--img
+        picture
+          source(type='image/webp', srcset='img/forest.webp')
+          img.slide__img(width='647', height='514', src='img/forest.jpg', alt='Mountain image', loading='lazy')
+      .slide__wrapper.slide__wrapper--text
         h2.slide__title Freedom at your
           span.slide__span  fingertips.
         p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
         +btn('Explore', 'slide__link')(href='fashion.html')
     +slide('page-main__slide')(class='slide--hike')
-      picture.slide__picture
-        source(type='image/webp', srcset='img/hike.webp')
-        img.slide__img(width='647', height='514', src='img/hike.jpg', alt='Hike image', loading='lazy')
-      .slide__wrapper
+      .slide__wrapper.slide__wrapper--img
+        picture.slide__picture
+          source(type='image/webp', srcset='img/hike.webp')
+          img.slide__img(width='647', height='514', src='img/hike.jpg', alt='Hike image', loading='lazy')
+      .slide__wrapper.slide__wrapper--text
         h2.slide__title Freedom at your
           span.slide__span  fingertips.
         p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
         +btn('Explore', 'slide__link')(href='fashion.html')
     +slide('page-main__slide')(class='slide--fashion')
-      picture.slide__picture
-        source(type='image/webp', srcset='img/fashion.webp')
-        img.slide__img(width='647', height='514', src='img/fashion.jpg', alt='Fashion image', loading='lazy')
-      .slide__wrapper
+      .slide__wrapper.slide__wrapper--img
+        picture.slide__picture
+          source(type='image/webp', srcset='img/fashion.webp')
+          img.slide__img(width='647', height='514', src='img/fashion.jpg', alt='Fashion image', loading='lazy')
+      .slide__wrapper.slide__wrapper--text
         h2.slide__title Freedom at your
           span.slide__span  fingertips.
         p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.

@@ -4,13 +4,13 @@
 
 .cursor {
   position: absolute;
+  z-index: 1;
 
   display: flex;
   justify-content: center;
   align-items: center;
   width: 3rem;
   height: 3rem;
-  z-index: 1;
 
   font-size: 0.5rem;
   color: $invert-text-color;
@@ -33,5 +33,11 @@
   &--active-link {
     background-color: $alter-bg-color;
     transform: scale(3);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cursor {
+    display: none;
   }
 }

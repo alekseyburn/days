@@ -10,7 +10,8 @@
     "declaration-empty-line-before" : null,
     "at-rule-no-unknown" : null,
     "scss/at-rule-no-unknown" : true,
-    "block-no-empty": null
+    "block-no-empty": null,
+    "no-descending-specificity": null
   }
 }
 
