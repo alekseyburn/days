@@ -1,0 +1,167 @@
+// В этом файле должны быть стили для БЭМ-блока fashion, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.fashion {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  min-height: 90vh;
+  margin: 5rem auto 0;
+
+  &--luiza {
+    .fashion__title {
+      color: $slide-mountain-color;
+    }
+
+    picture {
+      &::before {
+        content: "01";
+      }
+    }
+  }
+
+  &--silicia {
+    .fashion__title {
+      color: $slide-hike-color;
+    }
+
+    picture {
+      &::before {
+        content: "02";
+      }
+    }
+  }
+
+  &--claire {
+    .fashion__title {
+      color: $slide-fashion-color;
+    }
+
+    picture {
+      &::before {
+        content: "03";
+      }
+    }
+  }
+}
+
+.fashion__wrapper {
+  position: relative;
+
+  flex: 1 1 25rem;
+  margin-right: 2rem;
+}
+
+.fashion__title {
+  margin-bottom: 5rem;
+
+  font-size: 6rem;
+}
+
+.fashion__text {
+  margin-bottom: 8rem;
+
+  font-size: 2rem;
+}
+
+.fashion picture {
+  position: relative;
+
+  flex-basis: 25rem;
+  height: 70vh;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: -15rem;
+
+    font-size: 12rem;
+
+    opacity: 0.2;
+  }
+}
+
+.fashion__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: top;
+}
+
+@media screen and (max-width: 1400px) {
+  .fashion__wrapper {
+    text-align: center;
+  }
+
+  .fashion__title {
+    margin-bottom: 2rem;
+
+    font-size: 3rem;
+  }
+
+  .fashion__text {
+    margin-bottom: 3rem;
+
+    font-size: 1.2rem;
+  }
+
+  .fashion picture {
+    height: 50vh;
+  }
+
+  .fashion__img {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 1210px) {
+  .fashion {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .fashion__wrapper {
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .fashion picture {
+    &::before {
+      content: none;
+    }
+  }
+
+  .fashion__img {
+    width: 50vh;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fashion {
+    width: 90%;
+  }
+
+  .fashion__title {
+    margin-bottom: 2rem;
+
+    font-size: 2rem;
+  }
+
+  .fashion__text {
+    margin-bottom: 3rem;
+
+    font-size: 1rem;
+  }
+
+  .fashion__img {
+    width: 80%;
+  }
+}

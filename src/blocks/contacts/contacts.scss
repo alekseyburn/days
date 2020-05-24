@@ -13,14 +13,53 @@
 
 .contacts__info {
   flex-basis: 30rem;
+
   color: $invert-text-color;
 }
 
 .contacts__title {
-  font-size: 3rem;
   margin-bottom: 2rem;
+
+  font-size: 3rem;
 }
 
 .contacts__text {
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .contacts {
+    display: block;
+    padding-top: 10rem;
+  }
+
+  .contacts__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  .contacts__info {
+    flex-basis: auto;
+    padding: 0 2rem;
+
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contacts__list {
+    margin-bottom: 3rem;
+  }
+
+  .contacts__title {
+    margin-bottom: 1.5rem;
+
+    font-size: 2rem;
+  }
+
+  .contacts__text {
+    font-size: 1rem;
+  }
 }

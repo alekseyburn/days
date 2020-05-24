@@ -1,0 +1,62 @@
+extends ../pug/layout.pug
+
+block meta
+  title Travel Days
+  meta(name='description', content='lorem ipsum')
+
+  block append head
+    link(rel='preload', href='fonts/montserrat.woff2', as='font', crossorigin='anonymous')
+
+block header
+  +logo('./index.html', 'page-header__logo')
+    picture
+      source(type='image/webp', srcset='img/logo.webp')
+      img.logo__img(src='img/logo.png', width='79', height='31', alt='Days logo', loading='lazy')
+  button.page-header__btn
+    span.visually-hidden toggle menu
+    span.line-1
+    span.line-2
+    span.line-3
+
+block main
+  main.page-main(data-barba='container', data-barba-namespace='fashion')
+    h1.visually-hidden Fashion girls
+    +fashion()(class='fashion--luiza')
+      .fashion__wrapper
+        h2.fashion__title Luiza Bubzy
+        p.fashion__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates placeat id neque aperiam mollitia consequuntur soluta quibusdam deleniti!
+      picture
+        source(type='image/webp', srcset='img/fashion-img1.webp')
+        img.fashion__img(src='img/fashion-img1.jpg', width='772', height='1157', alt='woman photo', loading='lazy')
+    +fashion()(class='fashion--silicia')
+      .fashion__wrapper
+        h2.fashion__title Silicia Stellman
+        p.fashion__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates placeat id neque aperiam mollitia consequuntur soluta quibusdam deleniti!
+      picture
+        source(type='image/webp', srcset='img/fashion-img2.webp')
+        img.fashion__img(src='img/fashion-img2.jpg', width='772', height='1157', alt='woman photo', loading='lazy')
+    +fashion()(class='fashion--claire')
+      .fashion__wrapper
+        h2.fashion__title Claire Bradley
+        p.fashion__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit voluptates placeat id neque aperiam mollitia consequuntur soluta quibusdam deleniti!
+      picture
+        source(type='image/webp', srcset='img/fashion-img3.webp')
+        img.fashion__img(src='img/fashion-img3.jpg', width='772', height='1157', alt='woman photo', loading='lazy')
+    +contacts('page-main__contacts')
+      +social('contacts__list')
+        +social-link('twitter', '/', text='Twitter')
+        +social-link('youtube', '/', text='Youtube')
+        +social-link('instagram', '/', text='Instagram')
+      .contacts__info
+        h2.contacts__title Stay in touch.
+        p.contacts__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem praesentium ea amet error quidem natus. Magnam explicabo sed tenetur?
+  +cursor()(data-barba='wrapper')
+  .swipe.swipe--1
+  .swipe.swipe--2
+  .swipe.swipe--3
+block append page-bottom
+  script(src='https://unpkg.com/@barba/core')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js', integrity='sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c=', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js', integrity='sha256-+9YNuItWuR4sbqeaNiJOxG0BvptYz4fbUXbIZoH5Jwo=', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', integrity='sha256-XBVALc3QsDSQiDtiaBwNZ2rxCJTHzlUhhlDQ84J8bw8=', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js', integrity='sha256-3arngJBQR3FTyeRtL3muAGFaGcL8iHsubYOqq48mBLw=', crossorigin='anonymous')

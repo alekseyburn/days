@@ -4,6 +4,7 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  cursor: none;
 }
 
 html {
@@ -20,6 +21,7 @@ img {
 }
 
 body {
+  position: relative;
   min-width: $mobile-width;
   margin: 0 auto;
 
@@ -28,9 +30,19 @@ body {
   word-break: break-word;
 
   background-color: $main-bg-color;
+  overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &.hide {
+    overflow: hidden;
+  }
+}
+
+main {
+  position: absolute;
+  overflow: hidden;
 }
 
 p {
@@ -44,10 +56,6 @@ p {
   hyphenate-limit-zone: 8%;
 }
 
-.cursor {
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid $alter-bg-color;
-  border-radius: 50%;
-  position: absolute;
+.scrollmagic-pin-spacer {
+  position: static !important;
 }

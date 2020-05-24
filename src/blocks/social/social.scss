@@ -13,4 +13,18 @@
 
 .social__link {
   color: $invert-text-color;
+
+  &:hover {
+    color: $slide-mountain-color;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social {
+    font-size: 2rem;
+  }
+
+  .social__item {
+    margin-bottom: 1rem;
+  }
 }

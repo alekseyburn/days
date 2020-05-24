@@ -1,0 +1,43 @@
+// В этом файле должны быть стили для БЭМ-блока cursor, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cursor {
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+
+  font-size: 0.5rem;
+  color: $invert-text-color;
+
+  border: 2px solid $alter-bg-color;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 75% 75%;
+
+  transition: all 0.5s ease-in-out;
+  transition-property: background, transform;
+
+  pointer-events: none;
+
+  &--active {
+    background-color: $slide-mountain-color;
+    transform: scale(3);
+  }
+
+  &--active-link {
+    background-color: $alter-bg-color;
+    transform: scale(3);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cursor {
+    display: none;
+  }
+}

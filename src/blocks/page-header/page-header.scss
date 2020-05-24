@@ -1,4 +1,7 @@
 .page-header {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,32 +15,52 @@
 
 .page-header__btn {
   position: relative;
+  z-index: 1;
 
-  width: 50px;
+  width: 31px;
   height: 31px;
 
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid $alter-bg-color;
-  cursor: pointer;
+  outline: none;
 
-  &::before,
-  &::after {
+  //псевдоэлемент для нормального нажатия на кнопку
+  &::before {
     content: "";
     position: absolute;
-    left: 0;
+    top: -0.8rem;
+    left: -0.8rem;
+    right: -0.8rem;
+    bottom: -0.8rem;
+    z-index: 1;
+    display: block;
+  }
 
+  span {
+    position: absolute;
+
+    display: block;
     width: 100%;
     height: 2px;
 
     background-color: $alter-bg-color;
-  }
 
-  &::before {
-    top: 14px;
-  }
+    &.line-1 {
+      top: 0;
+    }
 
-  &::after {
-    top: 0;
+    &.line-2 {
+      top: 49%;
+    }
+
+    &.line-3 {
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page-header {
+    width: 90%;
   }
 }

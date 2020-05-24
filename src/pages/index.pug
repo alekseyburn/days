@@ -8,56 +8,64 @@ block meta
     link(rel='preload', href='fonts/montserrat.woff2', as='font', crossorigin='anonymous')
 
 block header
-  +logo('/', 'page-header__logo')
+  +logo('./index.html', 'page-header__logo')
     picture
       source(type='image/webp', srcset='img/logo.webp')
       img.logo__img(src='img/logo.png', width='79', height='31', alt='Days logo', loading='lazy')
   button.page-header__btn
     span.visually-hidden toggle menu
+    span.line-1
+    span.line-2
+    span.line-3
 
-
-block content
-  h1.visually-hidden Travel site
-  +slide('page-main__slide')(class='slide--mountain')
-    picture.slide__picture
-      source(type='image/webp', srcset='img/forest.webp')
-      img.slide__img(width='647', height='514', src='img/forest.jpg', alt='Mountain image', loading='lazy')
-    .slide__wrapper
-      h2.slide__title Freedom at your
-        span.slide__span  fingertips.
-      p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
-      +btn('Explore', 'slide__link')(href='/')
-  +slide('page-main__slide')(class='slide--hike')
-    picture.slide__picture
-      source(type='image/webp', srcset='img/hike.webp')
-      img.slide__img(width='647', height='514', src='img/hike.jpg', alt='Hike image', loading='lazy')
-    .slide__wrapper
-      h2.slide__title Freedom at your
-        span.slide__span  fingertips.
-      p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
-      +btn('Explore', 'slide__link')(href='/')
-  +slide('page-main__slide')(class='slide--fashion')
-    picture.slide__picture
-      source(type='image/webp', srcset='img/fashion.webp')
-      img.slide__img(width='647', height='514', src='img/fashion.jpg', alt='Fashion image', loading='lazy')
-    .slide__wrapper
-      h2.slide__title Freedom at your
-        span.slide__span  fingertips.
-      p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
-      +btn('Explore', 'slide__link')(href='/')
-  +contacts('page-main__contacts')
-    +social('contacts__list')
-      +social-link('twitter', '/', text='Twitter')
-      +social-link('youtube', '/', text='Youtube')
-      +social-link('instagram', '/', text='Instagram')
-    .contacts__info
-      h2.contacts__title Stay in touch.
-      p.contacts__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem praesentium ea amet error quidem natus. Magnam explicabo sed tenetur?
-  .cursor
-    span.cursor__text
+block main
+  main.page-main(data-barba='container', data-barba-namespace='home')
+    h1.visually-hidden Travel site
+    +slide('page-main__slide')(class='slide--mountain')
+      .slide__wrapper.slide__wrapper--img
+        picture
+          source(type='image/webp', srcset='img/forest.webp')
+          img.slide__img(width='647', height='514', src='img/forest.jpg', alt='Mountain image', loading='lazy')
+      .slide__wrapper.slide__wrapper--text
+        h2.slide__title Freedom at your
+          span.slide__span  fingertips.
+        p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
+        +btn('Explore', 'slide__link')(href='fashion.html')
+    +slide('page-main__slide')(class='slide--hike')
+      .slide__wrapper.slide__wrapper--img
+        picture.slide__picture
+          source(type='image/webp', srcset='img/hike.webp')
+          img.slide__img(width='647', height='514', src='img/hike.jpg', alt='Hike image', loading='lazy')
+      .slide__wrapper.slide__wrapper--text
+        h2.slide__title Freedom at your
+          span.slide__span  fingertips.
+        p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
+        +btn('Explore', 'slide__link')(href='fashion.html')
+    +slide('page-main__slide')(class='slide--fashion')
+      .slide__wrapper.slide__wrapper--img
+        picture.slide__picture
+          source(type='image/webp', srcset='img/fashion.webp')
+          img.slide__img(width='647', height='514', src='img/fashion.jpg', alt='Fashion image', loading='lazy')
+      .slide__wrapper.slide__wrapper--text
+        h2.slide__title Freedom at your
+          span.slide__span  fingertips.
+        p.slide__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores ad laboriosam iure rem. Voluptates pariatur quo iusto non deleniti.
+        +btn('Explore', 'slide__link')(href='fashion.html')
+    +contacts('page-main__contacts')
+      +social('contacts__list')
+        +social-link('twitter', '/', text='Twitter')
+        +social-link('youtube', '/', text='Youtube')
+        +social-link('instagram', '/', text='Instagram')
+      .contacts__info
+        h2.contacts__title Stay in touch.
+        p.contacts__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem praesentium ea amet error quidem natus. Magnam explicabo sed tenetur?
+  +cursor()(data-barba='wrapper')
   .swipe.swipe--1
   .swipe.swipe--2
   .swipe.swipe--3
-
-//- block append page-bottom
-//-   script(src='js/some.js')
+block append page-bottom
+  script(src='https://unpkg.com/@barba/core')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js', integrity='sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c=', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js', integrity='sha256-+9YNuItWuR4sbqeaNiJOxG0BvptYz4fbUXbIZoH5Jwo=', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', integrity='sha256-XBVALc3QsDSQiDtiaBwNZ2rxCJTHzlUhhlDQ84J8bw8=', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js', integrity='sha256-3arngJBQR3FTyeRtL3muAGFaGcL8iHsubYOqq48mBLw=', crossorigin='anonymous')
